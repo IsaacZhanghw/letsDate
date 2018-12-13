@@ -1,0 +1,103 @@
+<!--index.wxml-->
+<view class="container">
+    <view animation="{{animationData}}" wx:if="{{!hasReport}}" class="redirect-box" style="opacity: 0;">
+        <view class="redirect-content">
+            未做过测评,将跳转到测评页面
+        </view>
+    </view>
+    <view class="top-box">
+        <canvas class="canvas-box" style="width: {{clientWidth +'px'}}; height:{{clientWidth +'px'}}" canvas-id='backgroundCanvas'></canvas>
+        <image class="top-image-bg" mode="widthFix" src="../../image/backgroundCanvas.png"></image>
+        <view class="read-box">
+            <view class="read-box-relative">
+                <view class="read-num">{{resultReadNum}}C</view>
+                <view class="read-title">阅读能力值</view>
+                <view class="read-time">评测时间:{{createTime}}</view>
+            </view>
+        </view>
+        <view class="top-info-box">
+            <view class="user-item-1">
+                <view class="head-img-box">
+                    <image class="user-head-portrait" mode="widthFix" src="{{headImg ? headImg : '../../image/uerError.png'}}"></image>
+                </view>
+                <view class="user-name">{{realName}}</view>
+                <view v-if="reportData.grade" class="user-class">{{gradeList[grade - 1]}}年级{{class}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="other-box">
+        <view class="report-item report-item-user">
+            <view class="user-item-2">
+                <view class="point" style="flex-direction:column; left: {{exceedNum + '%'}}">
+                    <view class="view">{{exceedNum}}%</view>
+                    <view class="outter">
+                        <view class="middle">
+                            <view class="inner"></view>
+                        </view>
+                    </view>
+                </view>
+                <view class="item-2-content" style="width: {{exceedNum + '%'}}"></view>
+            </view>
+            <view class="user-item-3">
+                <view>
+                    超过了
+                    <view class="item-3-value">{{exceedNum}}%</view> 小朋友
+                </view>
+                <view>
+                    适宜阅读难度范围:
+                    <view class="item-3-range">{{range}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="hr"></view>
+        <!-- 阅读能力评价 -->
+        <view class="report-item  report-item-appraise">
+            <view class="item-title">阅读能力评价</view>
+            <view class="appraise-content">
+                {{reportData.copywriting}}
+            </view>
+            <view class="read-book">
+                <view class="read-book-tr">
+                    <view wx:for="{{books}}" class="read-book-box" wx:for-item="book" wx:key="bookId">
+                        <image class="read-book-item" mode="widthFix" src="{{book.bookCover}}" style="width: {{ bookWidth + 'px'}}" />
+                    </view>
+                </view>
+                <view class="read-book-tr">
+                    <view wx:for="{{books}}" class="read-book-box" wx:for-item="book" wx:key="bookId">
+                        <view class="read-book-item read-book-name" style="width: {{ bookWidth + 'px'}}">{{book.title}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <!-- 阅读能力维度值 -->
+        <view class="report-item  report-item-dimension">
+            <view class="item-title">阅读能力维度值</view>
+            <view class="dimension-content">
+                <view class="dimension-content-item" wx:for="{{dimensions}}" wx:for-item="dimenItem" wx:key="index">
+                    <progress-bar canvasId="{{'canvas' + index}}" color="{{dimenItem.color}}" rate="{{dimenItem.rate}}" dimensions="{{dimenItem.dimensions}}" bgColor="{{dimenItem.bgColor}}"></progress-bar>
+                </view>
+            </view>
+        </view>
+        <!-- 阅读能力水平描述 -->
+        <view class="report-item report-item-description">
+            <view class="item-title">阅读能力维度水平描述</view>
+            <view class="description-content-item" wx:for="{{dimensions}}" wx:for-item="dimenItem" wx:key="index">
+                <view class="description-content-item-title">{{dimenItem.dimensions}}</view>
+                <view class="description-content-item-content">
+                    {{dimenItem.copywriting}}
+                </view>
+            </view>
+        </view>
+        <!-- <view class="hr"></view> -->
+        <!-- 训练指导 -->
+        <!-- <view class="report-item report-item-direction">
+            <view class="item-title">训练指导</view>
+            <view class="direction-content">
+                针对当前阅读能力水平，柠檬老师特别准备了适合你的书籍和短文帮助你提高阅读能力，快去阅读吧！
+            </view>
+            <view class="direction-btn-box">
+                <view class="direction-btn" bindtap="lemonRecommend">柠檬推荐</view>
+            </view>
+        </view> -->
+    </view>
+</view>

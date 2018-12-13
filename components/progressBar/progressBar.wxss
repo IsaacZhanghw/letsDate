@@ -1,0 +1,4 @@
+.progerss-title{
+    font-size: .7rem;
+    margin-top: 10px;
+  }

@@ -1,0 +1,61 @@
+<!-- pages/reporte/reporte.wxml -->
+<import src="../../wxParse/wxParse"></import>
+<view class="reporte">
+    <swiper class="reporte-article-box" indicator-dots="{{false}}" current="{{artIndex}}" autoplay="{{false}}" duration="{{100}}" bindanimationfinish="changeArticle">
+        <block wx:for="{{articles}}" wx:key="article.articleId">
+            <swiper-item class="reporte-article">
+                <scroll-view class="reporte-article-item" scroll-y="{{true}}">
+                    <view class="reporte-article-item-title">{{articles[artIndex].title}}</view>
+                    <view class="reporte-article-item-index">({{artIndex + 1}}/{{articles.length}})</view>
+                    <view class="reporte-article-item-content">
+                        <template wx:if="{{index == 0}}" is="wxParse" data="{{wxParseData:article0.nodes}}"></template>
+                        <template wx:if="{{index == 1}}" is="wxParse" data="{{wxParseData:article1.nodes}}"></template>
+                        <template wx:if="{{index == 2}}" is="wxParse" data="{{wxParseData:article2.nodes}}"></template>
+                        <template wx:if="{{index == 3}}" is="wxParse" data="{{wxParseData:article3.nodes}}"></template>
+                        <template wx:if="{{index == 4}}" is="wxParse" data="{{wxParseData:article4.nodes}}"></template>
+                        <template wx:if="{{index == 5}}" is="wxParse" data="{{wxParseData:article5.nodes}}"></template>
+                        <template wx:if="{{index == 6}}" is="wxParse" data="{{wxParseData:article6.nodes}}"></template>
+                        <template wx:if="{{index == 7}}" is="wxParse" data="{{wxParseData:article7.nodes}}"></template>
+                        <template wx:if="{{index == 8}}" is="wxParse" data="{{wxParseData:article8.nodes}}"></template>
+                        <template wx:if="{{index == 9}}" is="wxParse" data="{{wxParseData:article9.nodes}}"></template>
+                        <template wx:if="{{index == 10}}" is="wxParse" data="{{wxParseData:article10.nodes}}"></template>
+                        <template wx:if="{{index == 11}}" is="wxParse" data="{{wxParseData:article11.nodes}}"></template>
+                        <template wx:if="{{index == 12}}" is="wxParse" data="{{wxParseData:article12.nodes}}"></template>
+                        <template wx:if="{{index == 13}}" is="wxParse" data="{{wxParseData:article13.nodes}}"></template>
+                        <template wx:if="{{index == 14}}" is="wxParse" data="{{wxParseData:article14.nodes}}"></template>
+                        <template wx:if="{{index == 15}}" is="wxParse" data="{{wxParseData:article15.nodes}}"></template>
+                    </view>
+                </scroll-view>
+            </swiper-item>
+        </block>
+        <swiper-item ></swiper-item>
+    </swiper>
+    <view class="reporte-question-box">
+        <view class="report-question-outter">
+            <view class="reporte-answer">
+                <view wx:for="{{articles[artIndex].Questions}}" wx:key="item.questionId" bindtap="changeQuestionByTap" data-index="{{index}}" 
+                class="{{queIndex === index ? 'report-answer-active' : 'report-answer-item'}}" style="width: {{(1 / articles[artIndex].Questions.length) * 100 + '%'}}">{{index + 1 + ' ' + answerStr[artIndex][index]}}</view>
+            </view>
+        </view>
+        <view class="report-option-outter">
+            <swiper class="report-option-outter" indicator-dots="{{false}}" current="{{queIndex}}" autoplay="{{false}}" duration="{{100}}" bindchange="changeQuestion">
+                <block wx:for="{{articles[artIndex].Questions}}"  wx:key="item.questionId">
+                    <swiper-item >
+                        <scroll-view class="reporte-option" scroll-y="{{true}}">
+                            <view class="reporte-question">
+                                <text>{{item.question}}</text>
+                            </view>
+                            <block wx:for="{{item.options}}" wx:for-item="option" wx:key="index">
+                                <view class="{{answers[artIndex][queIndex] === index ? 'reporte-option-active' : 'reporte-option-item'}}"  bind:tap="onOptionTap" data-select="{{index}}">
+                                    <view class="reporte-option-item-content" data-select="{{index}}">{{option}}</view>
+                                    <image wx:if="{{answers[artIndex][queIndex] === index}}" class="reporte-option-item-image" src="/image/selected.png" data-select="{{index}}"/>
+                                </view>
+                            </block>
+                        </scroll-view>
+                    </swiper-item>
+                </block>
+                <swiper-item ></swiper-item>
+            </swiper>
+        </view>
+    </view>
+</view>
