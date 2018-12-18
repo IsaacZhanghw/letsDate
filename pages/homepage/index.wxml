@@ -1,0 +1,31 @@
+<!-- index.wxml -->
+<view class="container">
+  <view class="userinfo" style="width: {{screenWidth + 'px'}}; height: {{screenHeight + 'px'}}">
+    <!-- <image class="background-top" style="width: {{screenWidth + 'px'}}; height: {{screenWidth * 0.207 + 'px'}}" src="../../image/background.jpg" mode="top aspectFit"></image> -->
+    <go-back></go-back>
+    <view style="margin-top:{{screenWidth * 0.207 + 'px'}}">
+      <view class="index-user">
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="aspectFit"></image>
+        <view class="userinfo-nickName">{{nickName}}</view>
+        主页了
+        <view class="userinfo-state">
+          查看资料
+          <image bindtap="bindViewTap" class="edit-icon" src="../../image/next.png" mode="aspectFit"></image>
+        </view>
+      </view>
+      <view class="index-border"></view>
+      <view class="index-router">
+        <view class="router-item" bindtap="bindViewTap">
+          <image class="router-icon" src="../../image/letter.png" mode="aspectFit"></image>
+          信息
+          <image class="go-icon" src="../../image/next.png" mode="aspectFit"></image>
+        </view>
+        <view class="router-item" bindtap="bindViewTap">
+          <image class="router-icon" src="../../image/hearts.png" mode="aspectFit"></image>
+          心动
+          <image class="go-icon" src="../../image/next.png" mode="aspectFit"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

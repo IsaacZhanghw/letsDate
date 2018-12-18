@@ -1,38 +1,30 @@
-<!--index.wxml-->
+<!-- index.wxml -->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="shouquan-button"> 获取头像昵称 </button>
+  <view class="userinfo" style="width: {{screenWidth + 'px'}}; height: {{screenHeight + 'px'}} ">
+    <button wx:if="{{!hasUserInfo}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="get-Info-button">
+      授权登录,体验更多
+    </button>
     <block wx:else>
-      <view class="index-header"></view>
-      <view class="index-card">
-        <!-- <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image> -->
-        <view  bindtap="bindViewTap" class="userinfo-avatar"><open-data type="userAvatarUrl"></open-data></view>
-        <view class="index-card-content">
-          <text class="index-card-content-title">提示：</text>
-          <view class="index-card-content-box">
-            <view class="index-card-content-box-item"> <view >1、</view><view>本阅读能力评测依据教育测量学项目反应理论，结合了教育部《小学语文大纲新课标》，并参考国际学生评估项目（英文缩写为PISA）设计而成。</view></view>
-            <view class="index-card-content-box-item"> <view >2、</view><view>评测频率为每年4次。</view></view>
-            <view class="index-card-content-box-item"> <view >3、</view><view>评测时间约为30～60分钟。</view></view>
-          </view>
-          <view class="index-card-content-name">
-            <text class="index-label">姓名：</text>
-            <input class="index-input-element" bindchange="onNameChange" value="{{name}}" />
-          </view>
-          <view class="index-card-content-grade">
-            <text class="index-label">年级：</text>
-            <picker class="index-input-element" mode="selector" range="{{gradeList}}" value="{{grade}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
-              <view class="index-card-content-grade-value">{{gradeList[grade]}}</view>
-            </picker>
-          </view>
+      <view class="index-user">
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="aspectFit"></image>
+        <view class="userinfo-nickName">{{nickName}}</view>
+        <view class="userinfo-role">角色</view>
+        <view class="userinfo-state">状态</view>
+        <image bindtap="bindViewTap" class="edit-icon" src="../../image/iconRight.png" mode="aspectFit"></image>
+      </view>
+      <view class="index-border"></view>
+      <view class="index-router">
+        <view class="router-item" bindtap="bindViewTap">
+          <image class="router-icon" src="../../image/message.png" mode="aspectFit"></image>
+          信息
+          <image class="edit-icon" src="../../image/iconRight.png" mode="aspectFit"></image>
+        </view>
+        <view class="router-item" bindtap="bindViewTap">
+          <image class="router-icon" src="../../image/heartbeat.png" mode="aspectFit"></image>
+          心动
+          <image class="edit-icon" src="../../image/iconRight.png" mode="aspectFit"></image>
         </view>
       </view>
-      <view class="index-button"  bindtap="start">
-        <image class="index-button-image" src="/image/index-button.png" />
-        <text class="index-button-text">开始</text>
-      </view>
-      <image class="index-bottom" src="/image/index-bottom.png" />
-      <!-- <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text> -->
     </block>
   </view>
 </view>

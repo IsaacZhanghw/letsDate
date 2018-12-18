@@ -1,16 +1,48 @@
 {
-  "pages":[
-    "pages/reporteReviews/reporteReviews",
-    "pages/index/index",
-    "pages/reporte/reporte",
-    "pages/commit/commit",
-    "pages/abilityRule/abilityRule"
-  ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#F8E31C",
-    "navigationBarTitleText": "阅读能力评测",
-    "navigationStyle": "default",
-    "navigationBarTextStyle":"black"
-  }
+    "pages": [
+        "pages/locale/index",
+        "pages/main/index",
+        "pages/index/index",
+        "pages/homepage/index",
+        "pages/messsge/index",
+        "pages/hearts/index"
+    ],
+    "window": {
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "我们约会吧",
+        "backgroundColor": "#D098FF",
+        "backgroundTextStyle": "light",
+        "navigationStyle": "custom"
+    },
+    "tabBar": {
+        "selectedColor": "#8CF6FB",
+        "list": [{
+                "pagePath": "pages/index/index",
+                "text": "开始",
+                "iconPath": "image/now.png",
+                "selectedIconPath": "image/nowSelec.png"
+            },
+            {
+                "pagePath": "pages/locale/index",
+                "text": "现场",
+                "iconPath": "image/search.png",
+                "selectedIconPath": "image/searchSelec.png"
+            },
+            {
+                "pagePath": "pages/main/index",
+                "text": "个人",
+                "iconPath": "image/user.png",
+                "selectedIconPath": "image/userSelec.png"
+            }
+        ]
+    },
+    "networkTimeout": {
+        "request": 10000,
+        "downloadFile": 10000
+    },
+    "debug": true,
+    "navigateToMiniProgramAppIdList": [
+        "wxe5f52902cf4de896"
+    ]
 }

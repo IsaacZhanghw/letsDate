@@ -1,9 +1,0 @@
-{
-    "navigationBarBackgroundColor": "#00B056",
-    "navigationBarTitleText": "阅读测评报告",
-    "navigationBarTextStyle": "white",
-    "usingComponents":
-    {
-        "progress-bar": "/components/progressBar/progressBar"
-    }
-}

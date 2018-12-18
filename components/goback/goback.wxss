@@ -1,0 +1,7 @@
+.goback-icon {
+    margin-top: 40px;
+    margin-left: 20px;
+    width: 40rpx;
+    height: 40rpx;
+    line-height: 40px;
+}

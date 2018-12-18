@@ -1,20 +1,22 @@
 const app = getApp();
 const headerConfig = {
   "Content-Type": "application/json",
-  'openid': wx.getStorageSync('openid')
+  // 'openid': wx.getStorageSync('openid')
 }
 getOpenid();
 export function getOpenid () {
+  // console.log('headerConfig',headerConfig)
   if(!headerConfig.openid) {
-    wxPromise(wx.login)()
-    .then(res => get("/auth/getOpenid", {jscode: res.code})
-    .then(res => {
-        const openid = JSON.parse(res.data.retobj).openid;
-        // 保存openid到本地
-        wx.setStorageSync("openid", openid);
-        headerConfig.openid = openid;
-      })
-    )
+    // wxPromise(wx.login)()
+    // .then(res => get("/auth/getOpenid", {jscode: res.code})
+    // .then(res => {
+    //     const openid = JSON.parse(res.data.retobj).openid;
+    //     // console.log('openid',openid)
+    //     // 保存openid到本地
+    //     wx.setStorageSync("openid", openid);
+    //     // headerConfig.openid = openid;
+    //   })
+    // )
   }
 }
 

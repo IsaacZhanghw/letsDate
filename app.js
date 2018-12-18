@@ -1,7 +1,9 @@
 App({
-
   onLaunch: function () {
     this.globalData.userInfo = wx.getStorageSync('userInfo') || null
+    // console.log('this.globalData',this.globalData)
+    this.globalData.SystemInfo = wx.getSystemInfoSync('userInfo') || null
+    // console.log('vthis.globalData',this.globalData)
     // if(!openid) {
     //   // 登录
     // };
@@ -28,7 +30,9 @@ App({
   globalData: {
     userInfo: null,
     openid: '',
-    url: 'https://applets.api.lemonread.com',
+    // url: 'https://applets.api.lemonread.com',
+    url: 'http://localhost:5000/api',
     isGoReviews: false,
+    SystemInfo: null,
   }
 })

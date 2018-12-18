@@ -1,0 +1,101 @@
+.background-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.userinfo {
+    position: relative;
+}
+
+.get-Info-button {
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.index-user {
+    padding: 30px 0;
+    text-align: center;
+    position: relative;
+}
+
+.userinfo-avatar {
+    width: 230rpx;
+    height: 230rpx;
+    border-radius: 50%;
+    border: 3px solid #4D9AE3;
+}
+
+.userinfo-nickName {
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.userinfo-state {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    font-size: .8rem;
+    margin-right: 20px;
+    position: relative;
+}
+
+.edit-icon {
+    width: 30rpx;
+    height: 30rpx;
+    line-height: 30px;
+    position: absolute;
+    top: 50%;
+    right: -50%;
+    transform: translate(0, -50%)
+}
+
+.navigator-icon {
+    width: 100rpx;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%)
+}
+
+.go-icon {
+    width: 30rpx;
+    height: 30rpx;
+    position: absolute;
+    top: 50%;
+    right: 30%;
+    transform: translate(0, -50%)
+}
+
+.index-border {
+    width: 100%;
+    height: 20px;
+    background-color: #eee;
+}
+
+.router-item {
+    height: 100rpx;
+    line-height: 100rpx;
+    width: 100%;
+    margin: 0 auto;
+    padding-right: 5%;
+    padding-left: 150rpx;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+
+.router-icon {
+    width: 60rpx;
+    height: 60rpx;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translate(0, -50%)
+}

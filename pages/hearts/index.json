@@ -1,0 +1,8 @@
+{
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "个人中心",
+    "navigationBarTextStyle": "white",
+    "usingComponents": {
+        "go-back": "/components/goback/goback"
+    }
+}

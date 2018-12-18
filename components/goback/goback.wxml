@@ -1,0 +1,3 @@
+<view>
+    <image class="goback-icon" bindtap="bindGoback" src="../../image/goback.png" mode="aspectFit"></image>
+</view>

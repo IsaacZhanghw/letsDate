@@ -23,6 +23,7 @@ Page({
                 nickName,
             })
         }
+        // console.log(' app.globalData', app.globalData)
         this.setData({
             screenWidth: app.globalData.SystemInfo.windowWidth,
             screenHeight: app.globalData.SystemInfo.windowHeight,
@@ -35,18 +36,18 @@ Page({
             hasUserInfo: true,
             nickName: e.detail.userInfo.nickName
         })
-        // console.log('e', e)
-        const reqData = {
-            weichatid: "zdeai352677",
-            password: "123456"
-        }
-        console.log('reqData==>',reqData)
-        // const url = app.globalData.url + `/users/login`;
-        post(`/users/login`, reqData).then(res => {
-            console.log('res',res)
-            // 清除本地存储
-            // wx.removeStorageSync(grade)
-        })
+        console.log('e', e)
+        // const reqData = {
+        //     weichatid: "zdeai352677",
+        //     password: "123456"
+        // }
+        // console.log('reqData==>',reqData)
+        // // const url = app.globalData.url + `/users/login`;
+        // post(`/users/login`, reqData).then(res => {
+        //     console.log('res',res)
+        //     // 清除本地存储
+        //     // wx.removeStorageSync(grade)
+        // })
     },
     previewImage: function (e) {
         var current = e.target.dataset.src;
