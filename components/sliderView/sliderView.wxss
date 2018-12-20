@@ -1,0 +1,10 @@
+.sliderView {
+    position: relative;
+    width: 95%;
+    height: 100rpx;
+    margin: 0 15rpx;
+}
+.slider-item{
+  width: 90%;
+  margin: 0 auto;
+}

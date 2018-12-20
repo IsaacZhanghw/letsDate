@@ -1,0 +1,53 @@
+<!-- index.wxml -->
+<view class="container">
+  <view class="userinfo" style="width: {{screenWidth + 'px'}}; height: {{screenHeight + 'px'}}">
+    <go-back></go-back>
+    <view>
+      <view class="index-user">
+        <image class="userinfo-avatar" src="{{avatarUrl}}" mode="aspectFit"></image>
+        <view class="section-box edit-avatar-box">
+          <view class="edit-avatar" bindtap="bindImage" >修改头像</view>
+        </view>
+        <view class="section-box">
+          <view class="section-title">昵称</view>
+          <input class="section-value" bindinput="bindKeyInput" placeholder="{{nickName}}" value="{{nickName}}" />
+        </view>
+        <view class="section-box">
+          <view class="section-title">微信号</view>
+          <input class="section-value" bindinput="bindKeyInput" placeholder="{{nickName}}" value="{{nickName}}" />
+        </view>
+        <view class="section-box">
+          <view class="section-title">
+            角色
+            <view class="role-absolute">
+              <view class="role-relative">
+                <text class="role-number number-left">{{minValue}}</text>
+                ~
+                <text class="role-number number-right">{{maxValue}}</text>
+              </view>
+            </view>
+          </view>
+          <slider-view leftMin="0" leftMax="1" step="0.05" minValue="0" maxValue="1" leftBlockColor="#ffa500" rightBlockColor="#4D9AE3" selectColor="#ffffff" groundColor="#1aad19" bind:leftValueChange="leftValueChangeAction" bind:rightValueChange="rightValueChangeAction"></slider-view>
+        </view>
+        <view class="section-box">
+          <view class="section-title">
+            对方
+            <view class="role-absolute">
+              <view class="role-relative">
+                <text class="role-number number-left">{{minValue}}</text>
+                ~
+                <text class="role-number number-right">{{maxValue}}</text>
+              </view>
+            </view>
+          </view>
+          <slider-view leftMin="0" leftMax="1" step="0.05" minValue="0" maxValue="1" leftBlockColor="#ffa500" rightBlockColor="#4D9AE3" selectColor="#ffffff" groundColor="#1aad19" bind:leftValueChange="leftValueChangeAction" bind:rightValueChange="rightValueChangeAction"></slider-view>
+        </view>
+        <view class="section-box">
+          <view class="section-title">签名</view>
+          <textarea class="section-value" auto-height placeholder="{{sloganStr}}" name="slogan" />
+        </view>
+        <button type="primary" size="mini" bindtap="primary">保存</button>
+      </view>
+    </view>
+  </view>
+</view>

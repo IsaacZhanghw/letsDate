@@ -1,7 +1,12 @@
+.back-box {
+    height: 100rpx;
+    position: relative;
+}
+
 .goback-icon {
-    margin-top: 40px;
-    margin-left: 20px;
     width: 40rpx;
     height: 40rpx;
-    line-height: 40px;
+    position: absolute;
+    bottom: 0;
+    left: 5%;
 }

@@ -1,0 +1,5 @@
+
+<view class='sliderView'>
+  <slider class='slider-item' block-color="{{leftBlockColor}}"  bindchange="leftSchange" min='{{minValue}}' max='{{leftMax}}' value='{{leftValue}}' activeColor="{{selectColor}}" backgroundColor="{{groundColor}}" step="{{step}}" block-size='14'/>
+  <slider class='slider-item' block-color="{{rightBlockColor}}" bindchange="rightSchange" min='{{rightMin}}' max='{{maxValue}}' value='{{rightValue}}' activeColor="{{groundColor}}" backgroundColor="{{selectColor}}" step="{{step}}" block-size='14'/>
+</view>

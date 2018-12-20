@@ -1,9 +1,10 @@
 {
     "pages": [
-        "pages/locale/index",
         "pages/main/index",
-        "pages/index/index",
         "pages/homepage/index",
+        "pages/locale/index",
+        "pages/editpage/index",
+        "pages/index/index",
         "pages/messsge/index",
         "pages/hearts/index"
     ],

@@ -9,14 +9,6 @@
     position: relative;
 }
 
-.get-Info-button {
-    width: 80%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%)
-}
-
 .index-user {
     padding: 20px 0;
     text-align: center;
@@ -30,50 +22,14 @@
     border: 2px solid #4D9AE3;
 }
 
-.userinfo-nickName {
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-}
-
-.userinfo-state {
-    display: inline-block;
-    height: 30px;
-    line-height: 30px;
-    font-size: .8rem;
-    margin-right: 20px;
-    position: relative;
-}
-
-.edit-icon {
-    width: 30rpx;
-    height: 30rpx;
-    line-height: 30px;
-    position: absolute;
-    top: 50%;
-    right: -60%;
-    transform: translate(0, -50%)
-}
-
-.go-icon {
-    width: 30rpx;
-    height: 30rpx;
-    position: absolute;
-    top: 50%;
-    right: 5%;
-    transform: translate(0, -50%)
-}
-
-.index-border {
-    width: 100%;
-    height: 20px;
-    background-color: #eee;
-}
-
 .section-box {
     padding: 0 10px;
     margin: 10px auto;
     text-align: left;
+}
+
+.edit-avatar-box {
+    text-align: center;
 }
 
 .edit-avatar {

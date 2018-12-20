@@ -1,4 +1,0 @@
-<view>
-	<canvas canvas-id="{{canvasId}}" style="width: 80px; margin: 0 auto; height: 80px"></canvas>
-    <view class="progerss-title" bindtap="goAbilitRule">{{dimensions}}</view>
-</view>

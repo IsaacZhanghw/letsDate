@@ -7,8 +7,8 @@
     </button>
     <view wx:else style="padding-top:{{screenWidth * 0.207 + 'px'}}">
       <view class="index-user">
-        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="aspectFit"></image>
-        <view class="userinfo-nickName">{{nickName}}</view>
+        <image class="userinfo-avatar" src="{{userdata.avatarUrl}}" mode="aspectFit"></image>
+        <view class="userinfo-nickName">{{userdata.nickName}}</view>
         <navigator class="userinfo-state" url="../homepage/index" open-type="navigate" hover-class="other-navigator-hover">
           查看资料
           <image class="edit-icon" src="../../image/next.png" mode="aspectFit"></image>
